@@ -1,0 +1,2991 @@
+Lab -06 is about static attributes and static Methods
+======================================================
+
+class Test1
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("from main");
+	}
+	public static void test() 
+	{
+		System.out.println("from test");
+	}
+}
+
+class Test2
+{
+	public static void test1() 
+	{
+		System.out.println("from test1");
+	}
+	public static void main(String[] args) 
+	{
+		System.out.println("from main");
+	}
+	public static void test2() 
+	{
+		System.out.println("from test2");
+	}
+}
+
+class Test3
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("main");
+		return 200;
+	}
+}
+
+class Test4
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("main begin");
+		test();
+		System.out.println("main end");
+	}
+	public static void test()
+	{
+		System.out.println("from test");
+	}
+}
+
+
+class Test5
+{
+	public static void test() 
+	{
+		System.out.println("from test");
+	}
+	public static void main(String[] args) 
+	{
+		System.out.println("from main");
+	}
+}
+
+class Test6
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("main");
+	}
+	public static void test()
+	{
+		System.out.println("test" );
+	}
+
+	System.out.println("end" );
+}
+
+class Test7 
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("main begin");
+		test();
+		test();
+		test();
+		test();
+		System.out.println("main end");
+	}
+	public static void test()
+	{
+		System.out.println("from test");
+		System.out.println("from test");
+		System.out.println("from test");
+		System.out.println("from test");
+	}
+}
+
+=======
+class Test8
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("main begin");
+		test();
+		System.out.println("---------");
+		test();
+		System.out.println("---------");
+		test();
+		System.out.println("---------");
+		test();
+		System.out.println("main end");
+	}
+	public static void test()
+	{
+		System.out.println("from test");
+	}
+}
+====
+class Test8
+{
+	public static void main(String[] args) 
+	{
+		int i = 10;
+		System.out.println("main begin:" + i);
+		test();
+		System.out.println("main end:" + i);
+	}
+	public static void test()
+	{
+		int i = 20;
+		System.out.println("from test:" + i);
+	}
+}
+========
+class Test9
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("main begin");
+		test1();
+		System.out.println("--------");
+		test2();
+		System.out.println("main end");
+	}
+	public static void test1()
+	{
+		System.out.println("from test1");
+	}
+	public static void test2()
+	{
+		System.out.println("from test2");
+	}
+}
+===
+class Test10
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("main begin");
+		test1();
+		System.out.println("--------");
+		test2();
+		System.out.println("main end");
+	}
+	public static void test1()
+	{
+		System.out.println("from test1 begin");
+		test2();
+		System.out.println("from test1 end");
+	}
+	public static void test2()
+	{
+		System.out.println("from test2");
+	}
+}
+===
+
+class Test11
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("main begin");
+		test1();
+		System.out.println("--------");
+		test2();
+		System.out.println("main end");
+	}
+	public static void test1()
+	{
+		System.out.println("from test1 begin");
+		test2();
+		System.out.println("from test1 end");
+	}
+	public static void test2()
+	{
+		System.out.println("from test2 begin");
+		test1();
+		System.out.println("from test2 end");
+	}
+}
+====
+class Test12
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("from main");
+	}
+	public static int test()
+	{
+		System.out.println("from test");
+	}
+}
+
+/*
+	primitive datatypes
+	-------------------
+	1. byte
+	2. short
+	3. int
+	4. long
+	5. float
+	6. double
+	7. char
+	8. boolean
+
+*/
+
+====
+class Test13
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("main");
+		return;
+	}
+}
+===
+class Test14
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("main");
+		return 200;
+	}
+}
+===
+class Test15
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("main begin");
+		int i = 1;
+		int j = test(i++);
+		System.out.println("main end:" + i + "," + j);
+	}
+	public static int test(int i)
+	{
+		System.out.println("from test:" + i);
+		return ++i;
+	}
+}
+
+===
+class Test16 
+{
+	public static void main(String[] args) 
+	{
+		int i = 1;
+		int j = test1(i++, true)  +  i   +  test1(++i, true)   +  i    +  test1(i++, false)  +  i  +
+				test2(i++, false)  +  i   +  test2(++i, false)   +  i    +  test2(i++, true)  +  i;
+		System.out.println(i); // 7
+		System.out.println(j); //
+	}
+	static int test1(int i, boolean flag)
+	{
+		return flag ? i++ : ++i;
+	}
+	static int test2(int i, boolean flag)
+	{
+		return flag ? ++i : i++;
+	}
+}
+
+===
+class Test17
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("main begin");
+		if(true)
+		{
+			System.out.println("if block");	
+			return;
+		}
+		System.out.println("main end");
+	}
+}
+===
+class Test18
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("main begin");
+		test();
+		System.out.println("main end");
+	}
+	public static void test()
+	{
+		System.out.println("test begin");
+		if(true)
+		{
+			System.out.println("if block");	
+			return;
+		}
+		System.out.println("test end");
+	}
+}
+===
+class Test19
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("main begin");
+		return;
+		System.out.println("main end");
+	}
+}
+===
+class Test20 
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("Hello World!");
+		return 100;
+	}
+}
+===
+class Test21
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("main begin");
+		double b1 = test();
+		System.out.println("main end:" + b1);
+	}
+	public static double test()
+	{
+		System.out.println("from test");
+		return 1.5;
+	}
+}
+===
+
+class Test22
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("from main");
+	}
+	public static int test()
+	{
+		System.out.println("from test");
+		return;
+	}
+}
+===
+class Test23
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("from main");
+	}
+	public static int test()
+	{
+		System.out.println("from test");
+		return false;
+	}
+}
+===
+class Test24
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("from main");
+	}
+	public static int test()
+	{
+		System.out.println("from test");
+		return 100;
+	}
+}
+===
+class 25
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("main begin");
+		int i = test();
+		System.out.println("in the main:" + i);
+		System.out.println("main end");
+	}
+	public static int test()
+	{
+		System.out.println("from test");
+		return 100;
+	}
+}
+===
+class Test26
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("main begin");
+		test();
+		System.out.println("main end");
+	}
+	public static int test()
+	{
+		System.out.println("from test");
+		return 100;
+	}
+}
+===
+
+class Test27
+{
+}
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("main begin");
+		System.out.println("in the main:" + test());
+		System.out.println("main end");
+	}
+	public static int test()
+	{
+		System.out.println("from test");
+		return 100;
+	}
+}
+===
+class Test28
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("main begin");
+		boolean i = test();
+		System.out.println("in the main:" + i);
+		System.out.println("main end");
+	}
+	public static int test()
+	{
+		System.out.println("from test");
+		return 100;
+	}
+}
+===
+class Test29
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("main begin");
+		System.out.println(test() + " in the main:");
+		System.out.println("main end");
+	}
+	public static int test()
+	{
+		System.out.println("from test");
+		return 100;
+	}
+}
+===
+class Test30
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("main begin");
+		int i = 10 + test();
+		System.out.println("----------------");
+		System.out.println(test() + " in the main@a");
+		System.out.println("----------------");
+		System.out.println(i + test() + " in the main@b");
+		System.out.println("----------------");
+		System.out.println(i + test() + test() + " in the main@c");
+		System.out.println("----------------");
+		System.out.println("@d:" + i + test() + test() + test());
+		System.out.println("main end");
+	}
+	public static int test()
+	{
+		System.out.println("from test");
+		return 100;
+	}
+}
+===
+class Test31 
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("main begin");
+		byte b1 = test();
+		System.out.println("main end:" + b1);
+	}
+	public static byte test()
+	{
+		System.out.println("from test");
+		return 100;
+	}
+}
+===
+class Test32
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("main begin");
+		test();
+		System.out.println("main end");
+	}
+	public static void test(int i)
+	{
+		System.out.println("from test");
+	}
+}
+===
+class Test33
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("main begin");
+		boolean b1 = test();
+		System.out.println("main end:" + b1);
+	}
+	public static boolean test()
+	{
+		System.out.println("from test");
+		return true;
+	}
+}
+===
+class Test34
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("main begin");
+		char b1 = test();
+		System.out.println("main end:" + b1);
+	}
+
+	public static char test()
+	{
+		System.out.println("from test");
+		return '$';
+	}
+}
+===
+class Test35
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("main begin");
+		int b1 = test1();
+		System.out.println("main end:" + b1);
+	}
+	public static int test1()
+	{
+		System.out.println("from test1");
+		int i;
+		return i;
+	}
+}
+===
+class Test36
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("main begin");
+		int b1 = test1();
+		System.out.println("main end:" + b1);
+	}
+	public static int test1()
+	{
+		System.out.println("from test1");
+		int i = 100;
+		return i;
+	}
+}
+===
+class Test37
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("main begin");
+		String b1 = test1();
+		System.out.println("main end:" + b1);
+	}
+	public static String test1()
+	{
+		System.out.println("from test1");
+		return "Hello";
+	}
+}
+===
+class Test38
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("main begin");
+		int b1 = test1();
+		System.out.println("main end:" + b1);
+	}
+	public static int test1()
+	{
+		System.out.println("from test1");
+		return 100 + 300;
+	}
+}
+===
+
+class Test39
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("main begin");
+		int b1 = test1();
+		System.out.println("main end:" + b1);
+	}
+	public static int test1()
+	{
+		System.out.println("from test1");
+		return test2();
+	}
+	public static int test2()
+	{
+		System.out.println("from test2");
+		return 200;
+	}
+}
+===
+class Test40 
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("main begin");
+		System.out.println("main end");
+	}
+	public static void test(int i)
+	{
+		System.out.println("from test");
+	}
+}
+===
+class Test41
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("main begin");
+		String b1 = test1();
+		System.out.println("main end:" + b1);
+	}
+	public static String test1()
+	{
+		System.out.println("from test1");
+		String str = "hello to all";
+		return str;
+	}
+}
+===
+class Test42
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("main begin");
+		test(10, false, 30);
+		System.out.println("main end:");
+	}
+	public static void test(int i, boolean j, int k)
+	{
+		System.out.println("from test:" + i);
+		System.out.println("from test:" + j);
+		System.out.println("from test:" + k);
+	}
+}
+===
+class Test43
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("main begin");
+		test(true);
+		System.out.println("main end");
+	}
+	public static void test(int i)
+	{
+		System.out.println("from test");
+	}
+}
+===
+class Test44
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("main begin");
+		test(200);
+		System.out.println("main end");
+	}
+	public static void test(int i)
+	{
+		System.out.println("from test");
+	}
+}
+===
+class Test45
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("main begin");
+		test(200);
+		System.out.println("main end");
+	}
+	public static void test(int i)
+	{
+		System.out.println("from test:" + i);
+	}
+}
+===
+class Test46
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("main begin");
+		test(200);
+		System.out.println("main end:" + i);
+	}
+	public static void test(int i)
+	{
+		System.out.println("from test:" + i);
+	}
+}
+===
+class Test47
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("main begin");
+		test(200);
+		System.out.println("main end:");
+	}
+	public static void test(int i, int j)
+	{
+		System.out.println("from test:" + i);
+	}
+}
+===
+class Test48
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("main begin");
+		test(200);
+		System.out.println("main end:");
+	}
+	public static void test(int i)
+	{
+		System.out.println("from test:" + i);
+		i = 30;
+		System.out.println("from test:" + i);
+	}
+}
+===
+class Test49
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("main begin");
+		test(200, 4.5);
+		System.out.println("main end:");
+	}
+	public static void test(int i, int j)
+	{
+		System.out.println("from test:" + i);
+	}
+}
+===
+
+class Test49
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("main begin");
+		test(200, 4);
+		System.out.println("main end:");
+	}
+	public static void test(int i, int j)
+	{
+		System.out.println("from test:" + i + ", " + j);
+	}
+}
+===
+class Test50
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("main begin");
+		test(200, 4);
+		System.out.println("main end:");
+	}
+	public static void test(int i, int j)
+	{
+		System.out.println("from test:" + i);
+	}
+}
+===
+class Test51
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("main begin");
+		System.out.println("main end:");
+	}
+	public static void test(int i, int i)
+	{
+		System.out.println("from test:");
+	}
+}
+===
+class Test52
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("main begin");
+		System.out.println("main end:");
+	}
+	public static void test(int i)
+	{
+		double i;
+		System.out.println("from test:");
+	}
+}
+===
+class Test53
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("main begin");
+		System.out.println("main end:");
+	}
+	public static void test(int i, double i)
+	{
+		System.out.println("from test:");
+	}
+}
+===
+class Test54
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("main begin");
+		test(10, 20, 30);
+		System.out.println("main end:");
+	}
+	public static void test(int i, boolean j, int k)
+	{
+		System.out.println("from test:");
+	}
+}
+====
+class Test55
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("main begin");
+		test(10, false, 30);
+		System.out.println("main end:");
+	}
+	public static void test(int i, boolean j, int k)
+	{
+		System.out.println("from test:");
+	}
+}
+
+===
+class Test56
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("main begin");
+		int i = 1;
+		test(i++  +  i++  +  i   +   i++);
+	  //test(1    +  2    +  3   +   3);
+		System.out.println("main end:" + i);
+	}
+	public static void test(int i)
+	{
+		System.out.println("from test:" + i);
+		i = 30;
+	}
+}
+===
+class Test57
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("main begin");
+		test(10, false, 30);
+		System.out.println("main end:");
+	}
+	public static void test(int i, boolean j, int k)
+	{
+		System.out.println("from test:" + i);
+		System.out.println("from test:" + j);
+		System.out.println("from test:" + k);
+	}
+}
+===
+class Test58
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("main begin");
+		int x;
+		test(x);
+		System.out.println("main end:");
+	}
+	public static void test(int i)
+	{
+		System.out.println("from test:" + i);
+	}
+}
+===
+class Test59
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("main begin");
+		int x = 30;
+		test(x);
+		System.out.println("main end:");
+	}
+	public static void test(int i)
+	{
+		System.out.println("from test:" + i);
+	}
+}
+===
+class Test60
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("main begin");
+		int x;
+		test(x = 10);
+		System.out.println("main end:" + x);
+	}
+	public static void test(int i)
+	{
+		System.out.println("from test:" + i);
+	}
+}
+===
+class Test61
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("main begin");
+		int i;
+		test(i = 10);
+		System.out.println("main end:" + i);
+	}
+	public static void test(int i)
+	{
+		System.out.println("from test:" + i);
+		i = 30;
+	}
+}
+===
+class Test62
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("main begin");
+		int i = 1;
+		test(i + 20);
+		System.out.println("main end:" + i);
+	}
+	public static void test(int i)
+	{
+		System.out.println("from test:" + i);
+		i = 30;
+	}
+}
+===
+class Test63
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("main begin");
+		int x = 1;
+		test(x + 20);
+		System.out.println("main end:" + x);
+	}
+	public static void test(int i)
+	{
+		System.out.println("from test:" + i);
+		i = 30;
+	}
+}
+===
+class Test64
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("main begin");
+		int i = 1;
+		test(i++);
+		System.out.println("main end:" + i);
+	}
+	public static void test(int i)
+	{
+		System.out.println("from test:" + i);
+		i = 30;
+	}
+}
+===
+class Test65
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("main begin");
+		int i = 1;
+		test(i++  +  i);
+	  //test(1 + 2);
+		System.out.println("main end:" + i);
+	}
+	public static void test(int i)
+	{
+		System.out.println("from test:" + i);
+		i = 30;
+	}
+}
+===
+class Test66
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("main begin");
+		int i = 1;
+		test(i--);
+		System.out.println("main end:" + i);
+	}
+	public static void test(int i)
+	{
+		System.out.println("from test:" + i);
+		i = 30;
+	}
+}
+===
+class Test67
+{
+	public static void main(String[] args) 
+	{
+		int i = 1;
+		int j = test1(i++, true)  +  i   +  test1(++i, true)   +  i    +  test1(i++, false)  +  i  +
+				test2(i++, false)  +  i   +  test2(++i, false)   +  i    +  test2(i++, true)  +  i;
+		System.out.println(i);
+		System.out.println(j);
+	}
+	static int test1(int i, boolean flag)
+	{
+		return flag? i++ : ++i;
+	}
+	static int test2(int i, boolean flag)
+	{
+		return flag? ++i : i++;
+	}
+}
+===
+class Test68
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("main begin");
+		int i = 1;
+		test(++i);
+		System.out.println("main end:" + i);
+	}
+	public static void test(int i)
+	{
+		System.out.println("from test:" + i);
+		i ++;
+	}
+}
+===
+class Test69
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("main begin");
+		int i = 1;
+		test(--i);
+		System.out.println("main end:" + i);
+	}
+	public static void test(int i)
+	{
+		System.out.println("from test:" + i);
+		++i;
+	}
+}
+===
+class Test70
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("main begin");
+		int i = 1;
+		test(++i  +  i);
+		System.out.println("main end:" + i);
+	}
+	public static void test(int i)
+	{
+		System.out.println("from test:" + i);
+		++i;
+	}
+}
+===
+class Test71
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("main begin");
+		int i = 1;
+		int j = test(i++);
+		System.out.println("main end:" + i + "," + j);
+	}
+	public static int test(int i)
+	{
+		System.out.println("from test:" + i);
+		return i++;
+	}
+}
+===
+class Test72
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("main begin");
+		int i = 1;
+		int j = test(++i);
+		System.out.println("main end:" + i + "," + j);
+	}
+	public static int test(int i)
+	{
+		System.out.println("from test:" + i);
+		return i++;
+	}
+}
+===
+class Test73
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("main begin");
+		int i = 1;
+		int j = test(++i);
+		System.out.println("main end:" + i + "," + j);
+	}
+	public static int test(int i)
+	{
+		System.out.println("from test:" + i);
+		return ++i;
+	}
+}
+===\
+class Test74
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("main begin");
+		int i = 1;
+		int j = test(i++);
+		System.out.println("main end:" + i + "," + j);
+	}
+	public static int test(int i)
+	{
+		System.out.println("from test:" + i);
+		return ++i;
+	}
+}
+class Test75
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("main begin");
+		int i = 1;
+		int j = test(++i)  +   i;
+		System.out.println("main end:" + i + "," + j);
+	}
+	public static int test(int i)
+	{
+		System.out.println("from test:" + i);
+		return ++i;
+	}
+}
+===
+class Test78
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("main begin");
+		int i = 1;
+		int j = test(i++)  +   i;
+		System.out.println("main end:" + i + "," + j);
+	}
+	public static int test(int i)
+	{
+		System.out.println("from test:" + i);
+		return ++i;
+	}
+}
+===
+class Test79
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("main begin");
+		int i = 1;
+		int j = test1(++i)  +  i  +  test2(i++)  +  i  +  test3(i++)  +  i  +  test4(++i) +  i  + 
+				test1(i++)  +  i  +  test2(++i)  +   i   +   test3(++i)  +   i  +  test4(i++) +  i;
+
+		
+		System.out.println("main end:" + i + "," + j);
+	}
+	public static int test1(int i)
+	{
+		return ++i;
+	}
+	public static int test2(int i)
+	{
+		return i++;
+	}
+	public static int test3(int i)
+	{
+		return i--;
+	}
+	public static int test4(int i)
+	{
+		return --i;
+	}
+}
+===
+class Test80
+{
+	static char i;  
+
+	public static void main(String[] args) 
+	{
+		System.out.println(i);    //      '\u0000'
+	}
+}
+===
+class Test81
+{
+	static float i;  
+	static double j;  
+
+	public static void main(String[] args) 
+	{
+		System.out.println(i);
+		System.out.println(j);
+	}
+}
+===
+class A3
+{
+	static int m;
+	public static void main(String[] args) 
+	{
+		int m = 4;
+		System.out.println(m);
+	}
+}
+===
+class Test82
+{
+	static int i, j, k;
+	public static void main(String[] args) 
+	{
+		System.out.println(i + ", " + j + "," + k);
+	}
+}
+===
+classTest83
+{
+	static byte i;  
+	static short j;  
+	static int k;  
+	static long m;  
+
+	public static void main(String[] args) 
+	{
+		System.out.println(i);
+		System.out.println(j);
+		System.out.println(k);
+		System.out.println(m);
+	}
+}
+===
+class Test84
+{
+	static int m;
+	static double m;
+	public static void main(String[] args) 
+	{
+		System.out.println("done");
+	}
+}
+===
+class Test85
+{
+	static int i;  // field (or)  attribute  (or)  property
+
+	public static void main(String[] args) 
+	{
+		System.out.println(i);
+	}
+}
+===
+class Test86
+{
+	static boolean i;  
+
+	public static void main(String[] args) 
+	{
+		System.out.println(i);
+	}
+}
+===
+class Test87
+{
+	public static void main(String[] args) 
+	{
+		int m = 10;
+		double m = 4.5;
+		System.out.println("done");
+	}
+}
+===
+class Test88
+{
+	static int i;
+	static int j;
+	static int k;
+	public static void main(String[] args) 
+	{
+		System.out.println(i + ", " + j + "," + k);
+	}
+}
+===
+class Test89
+{
+	static int i;
+
+	public static void main(String[] args) 
+	{
+		System.out.println("main1:" + i);
+		i = 1;
+		test();
+		System.out.println("main2:" + i);
+		i = 2;
+		V.test();
+		System.out.println("main3:" + i);
+	}
+	
+	public static void test()
+	{
+		System.out.println("test:" + i);
+		i += 3;
+	}
+}
+===
+class Test90
+{
+	public static void main(String[] args) 
+	{
+		static int i;
+		System.out.println("done");
+	}
+}
+===
+class Test91
+{
+	static int i;
+
+	public static void main(String[] args) 
+	{
+		System.out.println("main:" + i);
+		test();
+		U.test();
+	}
+	
+	public static void test()
+	{
+		System.out.println("test:" + i);
+	}
+
+}
+===
+class Test92
+{
+	static int i;
+	public static void main(String[] args) 
+	{
+		boolean i = true;
+		System.out.println(i);
+		System.out.println(M.i);
+	}
+}
+===
+class Test93
+{
+	static int m;
+	public static void main(String[] args) 
+	{
+		boolean m = true;
+		System.out.println(m);
+	}
+}
+===
+class Test94
+{
+	static int i = 10;
+	static int j = 20;
+	static int k;
+	static int m = 30;
+	public static void main(String[] args) 
+	{
+		System.out.println(i + ", " + j + ", " + k + ", " + m);
+		i = 50;
+		j = 510;
+		k = 40;
+		m = 140;
+		System.out.println(i + ", " + j + ", " + k + ", " + m);
+	}
+}
+===
+class Test95
+{
+	static int i;
+	static double j;
+	public static void main(String[] args) 
+	{
+		System.out.println(O.i);
+		System.out.println(O.j);
+	}
+}
+===
+class Test96
+{
+	static int i = 10;
+	static int j = 20;
+	static int k;
+	static int m = 30;
+	public static void main(String[] args) 
+	{
+		System.out.println(i + ", " + j + ", " + k + ", " + m);
+	}
+}
+===
+class Test97
+{
+	static int i;
+	public static void main(String[] args) 
+	{
+		System.out.println(i);
+		System.out.println(N.i);
+	}
+}
+===
+class Test98
+{
+	static int i;
+
+	public static void main(String[] args) 
+	{
+		System.out.println("main:" + i);
+	}
+	
+	public static void test()
+	{
+		System.out.println("test:" + i);
+	}
+
+}
+===
+class Test99
+{
+	static int i = 10, j = 20, k, m = 30;
+	public static void main(String[] args) 
+	{
+		System.out.println(i + ", " + j + ", " + k + ", " + m);
+		i = 50;
+		j = 510;
+		k = 40;
+		m = 140;
+		System.out.println(i + ", " + j + ", " + k + ", " + m);
+	}
+}
+====
+class Test100
+{
+	static int i = 10;
+	public static void main(String[] args) 
+	{
+		System.out.println(i);
+	}
+}
+===
+class Test101
+{
+	static int i = 10;
+	static int j = 20;
+	static int k;
+
+	public static void main(String[] args) 
+	{
+		System.out.println(i);
+		System.out.println(j);
+		System.out.println(k);
+	}
+}
+===
+class Test102
+{
+	static int i = 10;
+	static int j = 20;
+	static int k;
+	public static void main(String[] args) 
+	{
+		System.out.println(i);
+		System.out.println(j);
+		System.out.println(k);
+		i = 200;
+		j = 400;
+		k = 500;
+		System.out.println(i);
+		System.out.println(j);
+		System.out.println(k);
+	}
+}
+===
+class Test103
+{
+	static int i = test1();
+	static int j = test2();
+	static
+	{
+		System.out.println("sib begin:" + i + ", " + j);
+		main(null);
+		System.out.println("sib end:" + i + ", " + j);
+		i += 1;
+		j += 1;
+	}
+	static int test1()
+	{
+		System.out.println("test1 begin:" + i + ", " + j);
+		main(null);
+		System.out.println("test1 end:" + i + ", " + j);
+		i += j + 2;
+		j += i + 1;
+		return i + j + test2();
+	}
+	static int test2()
+	{
+		System.out.println("test2 begin:" + i + ", " + j);
+		i += j + 5;
+		j += i + 4;
+		main(null);
+		System.out.println("test2 end:" + i + ", " + j);
+		i += j + 4;
+		j += i + 5;
+		return i + j + 10;
+	}
+	public static void main(String[] args) 
+	{
+		System.out.println("main :" + i + ", " + j);
+		i += j + i;
+		j += i + j;
+	}
+}
+===
+class Test104 
+{
+	static int i;  // field (or)  attribute  (or)  property
+
+	public static void main(String[] args) 
+	{
+		System.out.println(i);
+	}
+}
+==============
+class Test105
+{
+	static byte i;  
+	static short j;  
+	static int k;  
+	static long m;  
+
+	public static void main(String[] args) 
+	{
+		System.out.println(i);
+		System.out.println(j);
+		System.out.println(k);
+		System.out.println(m);
+	}
+}
+=============
+
+class Test106
+{
+	static float i;  
+	static double j;  
+
+	public static void main(String[] args) 
+	{
+		System.out.println(i);
+		System.out.println(j);
+	}
+}
+===============
+
+class Test107
+{
+	static boolean i;  
+
+	public static void main(String[] args) 
+	{
+		System.out.println(i);
+	}
+}
+========
+class Test108
+{
+	static int i;
+	public static void main(String[] args) 
+	{
+		boolean i = true;
+		System.out.println(i);
+		System.out.println(M.i);
+	}
+}
+======
+class Test109
+{
+	static String i;  
+	static int[] j;
+	static String[] k;
+
+	public static void main(String[] args) 
+	{
+		System.out.println(i);
+		System.out.println(j);
+		System.out.println(k);
+	}
+}
+==========
+
+class Test110
+{
+	static int i;
+	static int j;
+	static int k;
+	public static void main(String[] args) 
+	{
+		System.out.println(i + ", " + j + "," + k);
+	}
+}
+========
+
+class Test111
+{
+	static int i, j, k;
+	public static void main(String[] args) 
+	{
+		System.out.println(i + ", " + j + "," + k);
+	}
+}
+==========
+
+
+class Test112
+{
+	static int m;
+	static double m;
+	public static void main(String[] args) 
+	{
+		System.out.println("done");
+	}
+}
+=======
+
+class Test113 
+{
+	public static void main(String[] args) 
+	{
+		int m = 10;
+		double m = 4.5;
+		System.out.println("done");
+	}
+}
+=========
+class Test114
+{
+	static int m;
+	public static void main(String[] args) 
+	{
+		int m = 4;
+		System.out.println(m);
+	}
+}
+==========
+
+class Test114
+{
+	static int m;
+	public static void main(String[] args) 
+	{
+		boolean m = true;
+		System.out.println(m);
+	}
+}
+=======
+
+class Test115 
+{
+	static int i;
+
+	public static void main(String[] args) 
+	{
+		System.out.println("main:" + i);
+	}
+	
+	public static void test()
+	{
+		System.out.println("test:" + i);
+	}
+
+}
+====
+
+class Test116
+{
+	static int i;
+
+	public static void main(String[] args) 
+	{
+		System.out.println("main1:" + i);
+		i = 1;
+		test();
+		System.out.println("main2:" + i);
+		i = 2;
+		Test116.test();
+		System.out.println("main3:" + i);
+	}
+	
+	public static void test()
+	{
+		System.out.println("test:" + i);
+		i += 3;
+	}
+
+}
+===
+class Test117
+{
+	static int i;
+	public static void main(String[] args) 
+	{
+		System.out.println(i);
+		System.out.println(N.i);
+	}
+}
+=====
+class Test118
+{
+	static int i;
+	static double j;
+	public static void main(String[] args) 
+	{
+		System.out.println(Test118.i);
+		System.out.println(Test118.j);
+	}
+}
+======
+
+class Test119
+{
+	public static void main(String[] args) 
+	{
+		static int i;
+		System.out.println("done");
+	}
+}
+=========
+class Test120 
+{
+	static int i = 10;
+	static int j = 20;
+	static int k;
+	static int m = 30;
+	public static void main(String[] args) 
+	{
+		System.out.println(i + ", " + j + ", " + k + ", " + m);
+	}
+}
+=======
+
+class Test121
+{
+	static int i = 10, j = 20, k, m = 30;
+	public static void main(String[] args) 
+	{
+		System.out.println(i + ", " + j + ", " + k + ", " + m);
+		i = 50;
+		j = 510;
+		k = 40;
+		m = 140;
+		System.out.println(i + ", " + j + ", " + k + ", " + m);
+	}
+}
+=========
+class Test122
+{
+	static int i = 10;
+	static int j = 20;
+	static int k;
+	static int m = 30;
+	public static void main(String[] args) 
+	{
+		System.out.println(i + ", " + j + ", " + k + ", " + m);
+		i = 50;
+		j = 510;
+		k = 40;
+		m = 140;
+		System.out.println(i + ", " + j + ", " + k + ", " + m);
+	}
+}
+========
+
+class Test123
+{
+	static int i;
+
+	public static void main(String[] args) 
+	{
+		System.out.println("main:" + i);
+		test();
+		U.test();
+	}
+	
+	public static void test()
+	{
+		System.out.println("test:" + i);
+	}
+}
+========
+
+class Test124 
+{
+	static int i = 10;
+	public static void main(String[] args) 
+	{
+		System.out.println(i);
+	}
+}
+===
+class Test125
+{
+	static int i = test1();
+	static int j = test2();
+	static
+	{
+		System.out.println("sib begin:" + i + ", " + j);
+		main(null);
+		System.out.println("sib end:" + i + ", " + j);
+		i += 1;
+		j += 1;
+	}
+	static int test1()
+	{
+		System.out.println("test1 begin:" + i + ", " + j);
+		main(null);
+		System.out.println("test1 end:" + i + ", " + j);
+		i += j + 2;
+		j += i + 1;
+		return i + j + test2();
+	}
+	static int test2()
+	{
+		System.out.println("test2 begin:" + i + ", " + j);
+		i += j + 5;
+		j += i + 4;
+		main(null);
+		System.out.println("test2 end:" + i + ", " + j);
+		i += j + 4;
+		j += i + 5;
+		return i + j + 10;
+	}
+	public static void main(String[] args) 
+	{
+		System.out.println("main :" + i + ", " + j);
+		i += j + i;
+		j += i + j;
+	}
+}
+===
+class Test126 
+{
+	static int i = 10;
+	static int j = 20;
+	static int k;
+	public static void main(String[] args) 
+	{
+		System.out.println(i);
+		System.out.println(j);
+		System.out.println(k);
+	}
+}
+====
+class Test127
+{
+	static int i = 10;
+	static int j = 20;
+	static int k;
+	public static void main(String[] args) 
+	{
+		System.out.println(i);
+		System.out.println(j);
+		System.out.println(k);
+		i = 200;
+		j = 400;
+		k = 500;
+		System.out.println(i);
+		System.out.println(j);
+		System.out.println(k);
+	}
+}
+========
+
+class Test128 
+{
+	static int i = 10;
+	static int j = 20;
+
+	static
+	{
+		//some code
+	}
+
+	public static void main(String[] args) 
+	{
+		System.out.println(i + ", " + j);
+	}
+}
+=========
+class Test129
+{
+	static int i = test1();
+	static int j = test2();
+
+	static
+	{
+		System.out.println("from SIB");
+	}
+
+	static int test1()
+	{
+		System.out.println("from test1");
+		return 10;
+	}
+
+	static int test2()
+	{
+		System.out.println("from test2");
+		return 20;
+	}
+
+	public static void main(String[] args) 
+	{
+		System.out.println("main:" + i + ", " + j);
+	}
+}
+===
+class Test130
+{
+	static int i = test1();
+	static int j = test2();
+
+	static
+	{
+		System.out.println("from SIB " + i + ", " + j);
+	}
+
+	static int test1()
+	{
+		System.out.println("from test1 " + i + ", " + j);
+		return 10;
+	}
+
+	static int test2()
+	{
+		System.out.println("from test2 " + i + ", " + j);
+		return 20;
+	}
+
+	public static void main(String[] args) 
+	{
+		System.out.println("main:" + i + ", " + j);
+	}
+}
+===
+class Test131
+{
+	static
+	{
+		System.out.println("from SIB1");
+	}
+
+	static int i = test1();
+	static int j = test2();
+
+	static
+	{
+		System.out.println("from SIB2");
+	}
+
+	static int test1()
+	{
+		System.out.println("from test1");
+		return 10;
+	}
+
+	static int test2()
+	{
+		System.out.println("from test2");
+		return 20;
+	}
+
+	public static void main(String[] args) 
+	{
+		System.out.println("main:" + i + ", " + j);
+	}
+}
+======
+
+class Test132
+{
+	static int i = test1();
+	static int j = test2();
+
+	static
+	{
+		System.out.println("from SIB " + i + ", " + j);  
+		i += 1; // 27
+		j += 2; //84
+	}
+
+	static int test1()
+	{
+		System.out.println("from test1 " + i + ", " + j);
+		i += 3;
+		j += 4;
+		return i + j + 10;
+	}
+
+	static int test2()
+	{
+		System.out.println("from test2 " + i + ", " + j);
+		i += j + 5; //26
+		j += i + 6; //36
+		return i + j + 20; //82
+	}
+
+	public static void main(String[] args) 
+	{
+		System.out.println("main:" + i + ", " + j);
+	}
+}
+===
+class Test133 
+{
+
+	static
+	{	
+		System.out.println("SIB");
+	}
+
+	public static void main(String[] args) 
+	{
+		System.out.println("main");
+	}
+}
+===
+class Test134
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("main");
+	}
+
+	static
+	{	
+		System.out.println("SIB");
+		main(null);
+	}
+
+}
+=====
+class Test135
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("main");
+	}
+
+	static
+	{	
+		System.out.println("SIB");
+		main(null);
+	}
+
+}
+===
+class Test136
+{
+	static int i = test();
+
+	public static int test()
+	{
+		System.out.println("test begin:" + i);
+		i = 1;
+		main(null);
+		System.out.println("test end:" + i);
+		i = 2;
+		return i + 2;
+	}
+
+	public static void main(String[] args) 
+	{
+		System.out.println("main:" + i);
+		i += 5;
+	}
+	static
+	{	
+		System.out.println("SIB begin:" + i);
+		i = 3;
+		main(null);
+		System.out.println("SIB end:" + i);
+	}
+}
+===
+
+class Test137
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("main");
+	}
+
+	static
+	{	
+		System.out.println("SIB");
+	}
+
+}
+===============
+
+//*** Static
+
+class Test138
+{
+	static int i = test();
+	static int j;
+
+	static int test()
+	{
+		return j;
+	}
+
+	public static void main(String[] args) 
+	{
+		System.out.println("done");
+	}
+}
+====
+
+class Test139 
+{
+	static int i;
+	static int j;
+
+	static
+	{
+		System.out.println(i); // direct read
+		System.out.println(j); // direct read
+		i = 10; //direct write
+		j = 20; //direct write
+		test();
+	}
+	static void test()
+	{
+		System.out.println(i); // indirect read
+		System.out.println(j); // indirect read
+		i = 10; //indirect write
+		j = 20; //indirect write
+	}
+
+	public static void main(String[] args) 
+	{
+		System.out.println("done");
+	}
+}
+====
+class Test140
+{
+	static int i;
+	static int j = i; //direct read
+
+
+	public static void main(String[] args) 
+	{
+		System.out.println("done");
+	}
+}
+===
+class Test141
+{
+	static int i;
+	static int j;
+
+	static
+	{
+		System.out.println(Test141.i); // in direct read
+		System.out.println(Test141.j); // in direct read
+		Test141.i = 10; //in direct write
+		Test141.j = 20; //in direct write
+		test();
+	}
+	static void test()
+	{
+		System.out.println(i); // indirect read
+		System.out.println(j); // indirect read
+		i = 10; //indirect write
+		j = 20; //indirect write
+	}
+
+	public static void main(String[] args) 
+	{
+		System.out.println("done");
+	}
+}
+===
+class Test142
+{
+	static int i;
+	static int j = Test142.i; //in direct read
+
+
+	public static void main(String[] args) 
+	{
+		System.out.println("done");
+	}
+}
+===
+class Test143 
+{
+	static int i = Test143.j;
+	static int j;
+	public static void main(String[] args) 
+	{
+		System.out.println("done");
+	}
+}
+===
+class Test144
+{
+	static int i;
+	static int j = test();
+
+	static int test()
+	{
+		System.out.println(i); //in direct read
+		i = 30; //in direct write
+		return 20;
+	}
+
+
+	public static void main(String[] args) 
+	{
+		System.out.println("done");
+	}
+}
+===
+class Test145 
+{
+	static int i = j;
+	static int j;
+	public static void main(String[] args) 
+	{
+		System.out.println("done");
+	}
+}
+===
+class Test146
+{
+	static int i;
+}
+class Test147
+{
+	public static void main(String[] args) 
+	{
+		//System.out.println("main:" + i);
+		System.out.println("main:" + Test146.i);
+	}
+}
+==
+class Test148
+{
+	static void test()
+	{
+		System.out.println("from Test148.test");
+	}
+}
+class Test149
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("main begin");
+		//test();
+		Test148.test();
+		System.out.println("main end");
+	}
+}
+==
+class Test150
+{
+	static void test()
+	{
+		System.out.println("from Test150.test");
+	}
+}
+class Test151
+{
+	static void test()
+	{
+		System.out.println("from Test151.test");
+	}
+}
+class Test152 
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("main begin");
+		Test150.test();
+		System.out.println("-----------");
+		Test151.test();
+		System.out.println("-----------");
+		System.out.println("main end");
+	}
+}
+==
+class Test153
+{
+	static void test()
+	{
+		System.out.println("from Test153.test");
+	}
+
+	static
+	{
+		System.out.println("from Test153.SIB");
+	}
+}
+class Test154
+{
+	static void test()
+	{
+		System.out.println("from Test154.test");
+	}
+	static
+	{
+		System.out.println("from Test154.SIB");
+	}
+}
+class Test155
+{
+	static
+	{
+		System.out.println("from Test155.SIB");
+	}	
+	public static void main(String[] args) 
+	{
+		System.out.println("main begin");
+		Test153.test();
+		System.out.println("-----------");
+		Test154.test();
+		System.out.println("-----------");
+		System.out.println("main end");
+	}
+}
+==
+class Test156
+{
+	static int i;
+	static void test()
+	{
+		System.out.println("from Test156.test");
+	}
+	static
+	{
+		System.out.println("from Test156.SIB");
+	}
+}
+class Test157
+{
+	static int j;
+	static void test()
+	{
+		System.out.println("from Test157.test");
+	}
+	static
+	{
+		System.out.println("from Test157.SIB");
+	}
+}
+class Test158
+{
+	static
+	{
+		System.out.println("from Test158.SIB");
+	}	
+	public static void main(String[] args) 
+	{
+		System.out.println("main begin");
+		Test156.test();
+		System.out.println("-----------");
+		Test157.test();
+		System.out.println("-----------");
+		System.out.println(Test156.i);
+		System.out.println("-----------");
+		System.out.println(Test157.j);
+		System.out.println("-----------");
+		Test156.test();
+		System.out.println("-----------");
+		Test157.test();
+		System.out.println("main end");
+	}
+}
+==
+class Test159
+{
+	static
+	{
+		System.out.println(J.i);
+	}
+
+	static int i;
+
+	public static void main(String[] args) 
+	{
+		System.out.println("done");
+	}
+}
+==
+class Test160
+{
+	static
+	{
+		System.out.println(i);
+	}
+
+	static int i;
+
+	public static void main(String[] args) 
+	{
+		System.out.println("done");
+	}
+}
+==
+class Test161
+{
+
+	static void test()
+	{
+		System.out.println(i);
+	}
+
+	static
+	{
+		test();
+	}
+
+	static int i;
+
+	public static void main(String[] args) 
+	{
+		System.out.println("done");
+	}
+}
+==
+class Test162
+{
+	static int i = 20;
+
+	static 
+	{
+		i = 100;
+	}
+
+	public static void main(String[] args) 
+	{
+		System.out.println(i);
+	}
+}
+==
+class Test163 
+{
+	static int i = test();
+	static int j = 10;
+
+	static int test()
+	{
+		return j;
+	}
+
+	public static void main(String[] args) 
+	{
+		System.out.println(i + ", " + j);
+	}
+}
+==
+class Test164
+{
+	static 
+	{
+		i = 100;
+	}
+
+	static int i = 20;
+
+	public static void main(String[] args) 
+	{
+		System.out.println(i);
+	}
+}
+==
+class Test167 
+{
+
+	static
+	{
+		System.exit(0);
+	}
+
+	public static void main(String[] args) 
+	{
+		System.out.println("i am from main");
+	}
+}
+==
+class Test168
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("main begin");
+		X.test();
+		System.out.println("main end");
+	}
+}
+==
+class Test169 
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("Hello World!");
+	}
+}
+==
+class Test170
+{
+	static int i;
+	static void test()
+	{
+		System.out.println("from Test170.test");
+	}
+	static
+	{
+		System.out.println("from Test170.SIB");
+	}
+}
+class Test171
+{
+	static int j;
+	static void test()
+	{
+		System.out.println("from Test171.test");
+	}
+	static
+	{
+		System.out.println("from Test171.SIB");
+	}
+}
+class Test172
+{
+	static
+	{
+		System.out.println("from U.SIB");
+	}	
+	public static void main(String[] args) 
+	{
+		System.out.println("main begin");
+		System.out.println(Test170.i);
+		System.out.println("-----------");
+		System.out.println(Test171.j);
+		Test170.test();
+		System.out.println("-----------");
+		Test171.test();
+		System.out.println("-----------");
+		System.out.println("-----------");
+		Test170.test();
+		System.out.println("-----------");
+		Test171.test();
+		System.out.println("main end");
+	}
+}
+==
+class Test173 
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("Test173 main begin");
+		Test173.main(args);
+		System.out.println("Test173 main end");
+	}
+	static
+	{
+		System.out.println("Test173.SIB");
+	}
+}
+==
+class Test174
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("main from Test174");
+	}
+	static
+	{
+		System.out.println("SIB from Test174");
+	}
+}
+==
+class Test175
+{
+	int i;
+	public static void main(String[] args) 
+	{
+		System.out.println(i);
+	}
+}
+==
+class Test176
+{
+	static void test1()
+	{
+		System.out.println("Hello World!");
+		test2();
+	}
+	void test2()
+	{
+		System.out.println("Hello World!");
+	}
+}
+==
+class Test177 
+{
+	int x;
+	
+	static
+	{
+		Test177 ref = new Test177();
+		System.out.println(ref.x);
+	}
+}
+==
+class Test178
+{
+	public void test1()
+	{
+		System.out.println("Hello World!");
+	}
+
+	static
+	{
+		test1();
+	}
+}
+==
+class Test179
+{
+	int i;
+
+	public static void main(String[] args) 
+	{
+		Test179 f1 = new Test179();
+		System.out.println(f1.i);
+	}
+}
+==
+class Test180
+{
+	int i;
+
+	static
+	{
+		i = 20;
+	}
+}
+==
+class Test181 
+{
+	void test()
+	{
+		System.out.println("from test");
+	}
+	public static void main(String[] args) 
+	{
+		System.out.println("main begin");
+		Test181 g1 = new Test181();
+		g1.test();
+		System.out.println("main end");
+	}
+}
+==
+class Test182
+{
+	int x;
+	static void test()
+	{
+		Test182 obj = new Test182();
+		System.out.println(obj.x);
+	}
+}
+==
+class Test183
+{
+	void test()
+	{
+	}
+
+	static
+	{
+		Test183 h1 = new Test183();
+		h1.test();
+	}
+}
+==
+class Test184
+{
+	int i;
+	void test()
+	{
+		System.out.println("test:" + i);
+		i = 20;
+	}
+	public static void main(String[] args) 
+	{
+		Test184 obj = new Test184();
+		obj.i = 10;
+		System.out.println("main1:" + obj.i);
+		obj.test();
+		System.out.println("main2:" + obj.i);
+	}
+}
+==
+class Test185 
+{
+	int i;
+
+	public static void main(String[] args) 
+	{
+		Test185 k1 = new Test185();
+		System.out.println(k1.i);
+		k1.i = 20;
+		System.out.println(k1.i);
+	}
+}
+==
+class Test186
+{
+	void test()
+	{
+		System.out.println("from test");
+	}
+	public static void main(String[] args) 
+	{
+		System.out.println("main begin");
+		Test186 ref = new Test186();
+		ref.test();
+		System.out.println("-----------");
+		ref.test();
+		System.out.println("-----------");
+		ref.test();
+		System.out.println("-----------");
+		System.out.println("main end");
+	}
+}
+==
+class Test187 
+{
+	int i;
+	public static void main(String[] args) 
+	{
+		Test187 m1 = new Test187();
+		Test187 m2 = m1;
+		System.out.println(m1.i); // 0
+		System.out.println(m2.i); // 0
+		m1.i = 10;
+		System.out.println(m1.i); // 10
+		System.out.println(m2.i); // 10
+		m2.i = 20;
+		System.out.println(m1.i); //20
+		System.out.println(m2.i); //20
+	}
+}
+==
+
+class Test188
+{
+	int i;
+	public static void main(String[] args) 
+	{
+		Test188 n1 = new Test188();
+		Test188 n2 = n1;
+		Test188 n3 = n2;
+		Test188 n4 = n1;
+		Test188 n5 = n3;
+		n4.i = 20;
+		System.out.println(n1.i); //20
+		System.out.println(n2.i); //20
+		System.out.println(n3.i); //20
+		System.out.println(n4.i); //20
+		System.out.println(n5.i); //20
+		n2.i += 20;
+		System.out.println(n1.i); // 40
+		System.out.println(n2.i); // 40
+		System.out.println(n3.i); // 40
+		System.out.println(n4.i); // 40
+		System.out.println(n5.i); // 40
+	}
+}
+==
+class Test189 
+{
+	int i;
+	public static void main(String[] args) 
+	{
+		Test189 ref1 = new Test189();
+		ref1.i = 10;
+		Test189 ref2 = new Test189();
+		ref2.i = 20;
+		Test189 ref3 = new Test189();
+		ref3.i = 30;
+		System.out.println(ref1.i); //10
+		System.out.println(ref2.i); //20
+		System.out.println(ref3.i); //30
+		ref2.i = ref1.i + ref3.i; // 10 + 30 = 40
+		System.out.println(ref1.i); //10
+		System.out.println(ref2.i); //40
+		System.out.println(ref3.i); //30
+	}
+}
+==
+class Test190
+{
+	int i;
+	public static void test()
+	{
+		System.out.println("test begin");
+		Test190 obj = new Test190();
+		System.out.println(obj.i);
+		obj.i = 10;
+		System.out.println(obj.i);
+		System.out.println("test end");
+	}
+	public static void main(String[] args) 
+	{
+		System.out.println("main begin");
+		test();
+		System.out.println("main end");
+	}
+}
+==
+class Test191
+{
+	int i;
+	public static void test(Q obj)
+	{
+		System.out.println("test begin");
+		System.out.println("c:" + obj.i);
+		obj.i = 10;
+		System.out.println("d:" + obj.i);
+		System.out.println("test end");
+	}
+	public static void main(String[] args) 
+	{
+		System.out.println("main begin");
+		Test191 ref = new Test191();
+		ref.i = 5;
+		System.out.println("a:" + ref.i);
+		test(ref);
+		System.out.println("b:" + ref.i);
+		System.out.println("main end");
+	}
+}
+==
+class Test192
+{
+	int i;
+	public static Test192 test()
+	{
+		System.out.println("test begin");
+		Test192 obj = new Test192();
+		System.out.println("c:" + obj.i);
+		obj.i = 10;
+		System.out.println("d:" + obj.i);
+		System.out.println("test end");
+		return obj;
+	}
+	public static void main(String[] args) 
+	{
+		System.out.println("main begin");
+		Test192 ref = test();
+		System.out.println("a:" + ref.i);
+		System.out.println("main end");
+	}
+}
+==
+class Test193 
+{
+	void test()
+	{
+		System.out.println("test:" + this);
+	}
+	public static void main(String[] args) 
+	{
+		Test193 s1 = new Test193();
+		System.out.println("main:" + s1);
+		s1.test();
+	}
+}
+==
+class Test194
+{
+	int i;
+	void test()
+	{
+		System.out.println("test:" + this.i);
+		this.i = 20;
+	}
+	public static void main(String[] args) 
+	{
+		Test194 t1 = new Test194();
+		t1.i = 10;
+		System.out.println("main1:" + t1.i);
+		t1.test();
+		System.out.println("main2:" + t1.i);
+	}
+}
+==
+class Test195 
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("main begin");
+		Test195 obj = new Test195(90);
+		System.out.println("main end");
+	}
+}
